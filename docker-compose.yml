@@ -1,0 +1,10 @@
+version: '3.7'
+
+services:
+  qmk:
+    image: qmkfm/qmk_firmware
+    container_name: qmk
+    volumes:
+      - ./keymap:/qmk_firmware/keyboards/massdrop/alt/keymaps/custom
+      - ./build:/qmk_firmware/.build
+    command: "make massdrop/alt:custom"
